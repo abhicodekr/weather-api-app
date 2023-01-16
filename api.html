@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather app</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" >
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="api.css">
 </head>
@@ -25,5 +25,24 @@
 </body>
 <script src=" https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script type="text/javascript"> link = "https://api.openweathermap.org/data/2.5/weather?q=delhi&appid=282e780454f67d2257792a8cb23e50a4"
+    var request = new XMLHttpRequest();
+    request.open('GET', link, true);
+    request.onload = function () {
+        var obj = JSON.parse(this.response);
+        console.log(obj);
+        document.getElementById('weather').innerHTML = obj.weather[0].description;
+        document.getElementById('location').innerHTML = obj.name;
+        document.getElementById('temp').innerHTML = Math.round(obj.main.temp - 273.15);
+        document.getElementById('icon').src = "https://openweathermap.org/img/w/" + obj.weather[0].icon + ".png";
+    }
+    if (request.status >= 200 && request.status < 400) {
+        var temp = obj.main.temp;
+    }
+    else {
+        console.log("The city data is not avilable");
+    }
+    request.send();
+</script>
 
 </html>

@@ -20,7 +20,7 @@ body {
   text-align: center;
 }
 .card h4 {
-  font-size: 4rem;
+  font-size: 5rem;
   font-weight: 400;
   margin: 1rem 0;
 }
@@ -37,7 +37,7 @@ button.refresh {
   background: transparent;
   border: 0;
   color: #9c9c9d;
-  font-size: 30px;
+  font-size: 35px;
   height: 100px;
   border-radius: 50%;
   box-shadow: 10px 4px 10px #252525, 5px 5px 18px #4a4a4a;
